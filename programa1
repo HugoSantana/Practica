@@ -1,0 +1,10 @@
+package unidad1;
+
+public class Bienvenida {
+
+	public static void main(String[] args) {
+		System.out.println("Bienvenido al curso de programacion II en java");
+		System.out.println("Hugo Santana");
+	}
+
+}
