@@ -1,0 +1,31 @@
+package unidad1;
+
+
+public class Maraton {
+	 static String[] corredores = {
+			"juan Perez","Jose lopez","Benito Juarez","Omar Bravo","Eduardo Ruiz"
+	};
+
+
+	static double[] tiempo ={
+			2.45,2.40,2.22,2.50,2.15
+	};
+	public static void main(String[] args) {
+		int idxp=0,idxs =1;
+		for(int i= 1; i< corredores.length; i++){
+			if(tiempo[i] < tiempo[idxp]){
+				idxs = idxp;
+				idxp = i;
+			}
+
+
+		}
+
+
+     System.out.println("primer lugar:" + corredores[idxp] + "tiempo:" + tiempo[idxp]);
+     System.out.println("segundo lugar:" + corredores[idxs] + "tiempo:" + tiempo[idxs]);
+	}
+
+
+}
+
