@@ -1,0 +1,50 @@
+package Unidad3;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class Botones extends JFrame {
+    private static final long serialVersionUID = 1L;
+    JButton bot1, bot2;
+    
+    
+    public Botones(){
+    	super("Uso de botones en Java GUI");
+    	setLayout(new FlowLayout());
+    	bot1 = new JButton("Boton simple");
+    	add(bot1);
+    	Icon imag = new ImageIcon(
+    	getClass().getResource("escudo-bayer-munich.png"));
+        bot2 = new JButton("Boton con imagen",imag);
+        add(bot2);
+    	
+    	
+    	
+    	ManejadorBotones maneja = new ManejadorBotones();
+    	bot1.addActionListener(maneja);
+    	bot2.addActionListener(maneja);
+    }
+    public class ManejadorBotones implements ActionListener{
+    	public void actionPerformed(ActionEvent e){
+    		if (e.getSource()==bot1){
+    			JOptionPane.showMessageDialog(Botones.this, "Presionaste" + e.getActionCommand());
+    			
+    			
+    		}
+    		if(e.getSource()==bot2){
+    			JOptionPane.showMessageDialog(Botones.this, "AH que caray !! presionaste"
+    		+ e.getActionCommand());
+    	}
+    }
+    }
+	public static void main(String[] args) {
+		Botones bots = new Botones();
+		bots.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		bots.setSize(375, 110);
+		bots.setVisible(true);
+	}
+
+}
